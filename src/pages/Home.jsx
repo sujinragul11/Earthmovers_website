@@ -11,6 +11,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import planImage from '../assets/Plan.png';
 
 const Home = () => {
   const featuredEquipment = fleetData.slice(0, 4);
@@ -27,7 +28,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/hero-bg.jpg)',
+            backgroundImage: `url(${planImage})`,
             backgroundAttachment: 'fixed'
           }}
         />

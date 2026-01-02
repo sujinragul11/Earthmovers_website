@@ -5,6 +5,32 @@ import { contactSchema } from '../../schemas/contactSchema';
 import { generateWhatsAppMessage } from '../../utils/whatsapp';
 import Button from '../ui/Button';
 
+// Add this function to save contact to admin database
+const saveContactToAdmin = async (formData) => {
+  try {
+    const contactData = {
+      ...formData,
+      source: 'website',
+      status: 'new',
+      createdAt: new Date().toISOString(),
+      assignedTo: null
+    };
+
+    // Save to localStorage for demo purposes
+    const existingContacts = JSON.parse(localStorage.getItem('website_contacts') || '[]');
+    existingContacts.push({
+      ...contactData,
+      id: Date.now()
+    });
+    localStorage.setItem('website_contacts', JSON.stringify(existingContacts));
+
+    return true;
+  } catch (error) {
+    console.error('Error saving contact:', error);
+    return false;
+  }
+};
+
 const ContactForm = () => {
   const {
     register,
@@ -14,12 +40,6 @@ const ContactForm = () => {
   } = useForm({
     resolver: zodResolver(contactSchema),
   });
-
-  const onSubmit = (data) => {
-    const whatsappUrl = generateWhatsAppMessage(data);
-    window.open(whatsappUrl, '_blank');
-    reset();
-  };
 
   const services = [
     'Excavator Rental',
@@ -31,6 +51,16 @@ const ContactForm = () => {
     'Equipment Purchase',
     'Maintenance Service',
   ];
+
+  const onSubmit = async (data) => {
+    // Save to admin database first
+    await saveContactToAdmin(data);
+    
+    // Then send WhatsApp message
+    const whatsappUrl = generateWhatsAppMessage(data);
+    window.open(whatsappUrl, '_blank');
+    reset();
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

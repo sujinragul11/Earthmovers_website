@@ -19,10 +19,13 @@ const DataTable = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRows, setSelectedRows] = useState([]);
 
-  const totalPages = Math.ceil(data.length / pageSize);
+  // Ensure data is an array
+  const safeData = Array.isArray(data) ? data : [];
+  
+  const totalPages = Math.ceil(safeData.length / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const currentData = data.slice(startIndex, endIndex);
+  const currentData = safeData.slice(startIndex, endIndex);
 
   const handleSelectAll = (e) => {
     if (e.target.checked) {

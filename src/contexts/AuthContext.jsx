@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { authService } from '../admin/services/authService';
 
 const AuthContext = createContext(null);
 
@@ -23,24 +24,20 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const mockUsers = [
-      { id: 1, email: 'admin@earthmovers.com', name: 'Super Admin', role: 'superadmin' },
-      { id: 2, email: 'manager@earthmovers.com', name: 'Manager', role: 'manager' },
-    ];
-
-    const user = mockUsers.find(u => u.email === email && password === 'admin123');
+    const result = await authService.login(email, password);
     
-    if (user) {
-      setUser(user);
-      localStorage.setItem('admin_user', JSON.stringify(user));
-      localStorage.setItem('admin_token', 'mock-jwt-token');
-      return { success: true, user };
+    if (result.success) {
+      setUser(result.user);
+      localStorage.setItem('admin_user', JSON.stringify(result.user));
+      localStorage.setItem('admin_token', result.token);
+      return { success: true, user: result.user };
     }
     
-    return { success: false, message: 'Invalid credentials' };
+    return { success: false, message: result.message };
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await authService.logout();
     setUser(null);
     localStorage.removeItem('admin_user');
     localStorage.removeItem('admin_token');

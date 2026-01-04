@@ -1,0 +1,293 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Model
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  phone        String?
+  password     String
+  role         UserRole  @default(USER)
+  avatar       String?
+  isActive     Boolean   @default(true)
+  lastLogin    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  contacts     Contact[]
+  messages     Message[]
+  assignedTasks Contact[] @relation("AssignedContacts")
+
+  @@index([email])
+  @@index([role])
+}
+
+enum UserRole {
+  SUPERADMIN
+  ADMIN
+  MANAGER
+  USER
+}
+
+// Contact Model
+model Contact {
+  id          String    @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  company     String?
+  subject     String
+  message     String?
+  source      ContactSource @default(WEBSITE)
+  status      ContactStatus @default(NEW)
+  ipAddress   String?
+  userAgent   String?
+  location    String?
+  assignedTo  String?
+  notes       String?
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  userId      String?   @map("user_id")
+  user        User?     @relation(fields: [userId], references: [id])
+  assignedUser User?    @relation("AssignedContacts", fields: [assignedTo], references: [id])
+  messages     Message[]
+
+  @@index([email])
+  @@index([status])
+  @@index([source])
+  @@index([createdAt])
+  @@index([assignedTo])
+}
+
+enum ContactSource {
+  WEBSITE
+  WHATSAPP
+  PHONE
+  EMAIL
+  REFERRAL
+}
+
+enum ContactStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  FOLLOWUP
+  CONVERTED
+  REJECTED
+}
+
+// Visitor Model
+model Visitor {
+  id          String    @id @default(cuid())
+  sessionId   String    @unique
+  ipAddress   String
+  userAgent   String
+  browser     String
+  os          String
+  device      String
+  location    String?
+  country     String?
+  city        String?
+  referrer    String?
+  landingPage String
+  currentPage String?
+  pages       Json
+  duration    Int?
+  isReturning Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  pageViews   PageView[]
+
+  @@index([ipAddress])
+  @@index([createdAt])
+  @@index([location])
+}
+
+// PageView Model
+model PageView {
+  id          String    @id @default(cuid())
+  visitorId   String
+  visitor     Visitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  pageUrl     String
+  pageTitle   String?
+  duration    Int?
+  createdAt   DateTime  @default(now())
+
+  @@index([visitorId])
+  @@index([createdAt])
+  @@index([pageUrl])
+}
+
+// Equipment Model
+model Equipment {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  category    EquipmentCategory
+  units       Int       @default(1)
+  available   Int       @default(1)
+  hourlyRate  Float
+  dailyRate   Float?
+  weeklyRate  Float?
+  monthlyRate Float?
+  operatorBata Float?
+  minHours    Int       @default(4)
+  fuelPerHour Float?
+  specs       Json
+  features    Json?
+  images      String[]
+  description String?
+  isFeatured  Boolean   @default(false)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([category])
+  @@index([isFeatured])
+  @@index([isActive])
+  @@index([slug])
+}
+
+enum EquipmentCategory {
+  EXCAVATOR
+  LOADER
+  TRUCK
+  CRANE
+  GRADER
+  COMPACTOR
+  MIXER
+  DOZER
+  FORKLIFT
+  OTHER
+}
+
+// Project Model
+model Project {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  location    String
+  client      String
+  description String?
+  duration    String?
+  startDate   DateTime?
+  endDate     DateTime?
+  status      ProjectStatus @default(COMPLETED)
+  images      String[]
+  equipment   String[]
+  metadata    Json?
+  isFeatured  Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([status])
+  @@index([isFeatured])
+  @@index([slug])
+  @@index([createdAt])
+}
+
+enum ProjectStatus {
+  PLANNING
+  ONGOING
+  COMPLETED
+  CANCELLED
+}
+
+// Message Model
+model Message {
+  id          String    @id @default(cuid())
+  contactId   String?
+  contact     Contact?  @relation(fields: [contactId], references: [id])
+  userId      String?
+  user        User?     @relation(fields: [userId], references: [id])
+  type        MessageType @default(WEBSITE)
+  subject     String
+  content     String
+  status      MessageStatus @default(UNREAD)
+  priority    Priority  @default(NORMAL)
+  attachments String[]
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  parentId    String?
+  parent      Message?  @relation("MessageReplies", fields: [parentId], references: [id])
+  replies     Message[] @relation("MessageReplies")
+
+  @@index([contactId])
+  @@index([userId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@index([parentId])
+}
+
+enum MessageType {
+  WEBSITE
+  WHATSAPP
+  EMAIL
+  PHONE
+  SMS
+}
+
+enum MessageStatus {
+  UNREAD
+  READ
+  REPLIED
+  ARCHIVED
+  SPAM
+}
+
+enum Priority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+// Analytics Model
+model Analytics {
+  id          String    @id @default(cuid())
+  date        DateTime  @unique
+  totalVisitors Int     @default(0)
+  uniqueVisitors Int    @default(0)
+  pageViews   Int       @default(0)
+  bounceRate  Float     @default(0)
+  avgDuration Float     @default(0)
+  sources     Json
+  topPages    Json
+  conversions Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([date])
+}
+
+// Settings Model
+model Setting {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  value       String
+  type        String    @default("string")
+  group       String    @default("general")
+  description String?
+  isPublic    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([key])
+  @@index([group])
+}

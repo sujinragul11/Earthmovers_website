@@ -8,21 +8,24 @@ import Button from '../ui/Button';
 // Add this function to save contact to admin database
 const saveContactToAdmin = async (formData) => {
   try {
-    const contactData = {
-      ...formData,
-      source: 'website',
-      status: 'new',
-      createdAt: new Date().toISOString(),
-      assignedTo: null
-    };
-
-    // Save to localStorage for demo purposes
-    const existingContacts = JSON.parse(localStorage.getItem('website_contacts') || '[]');
-    existingContacts.push({
-      ...contactData,
-      id: Date.now()
+    const response = await fetch('http://localhost:5000/api/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: '', // Optional
+        subject: formData.service,
+        message: formData.message || '',
+      }),
     });
-    localStorage.setItem('website_contacts', JSON.stringify(existingContacts));
+
+    if (!response.ok) {
+      throw new Error('Failed to save contact');
+    }
 
     return true;
   } catch (error) {

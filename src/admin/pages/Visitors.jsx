@@ -81,7 +81,7 @@ const Visitors = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Total Visitors</p>
               <p className="text-2xl font-semibold text-gray-900">
-                {visitorStats?.totalVisitors.toLocaleString() || 0}
+                {(visitorStats?.totalVisitors || 0).toLocaleString()}
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ const Visitors = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Page Views</p>
               <p className="text-2xl font-semibold text-gray-900">
-                {visitorStats?.totalPageViews.toLocaleString() || 0}
+                {(visitorStats?.pageViews || 0).toLocaleString()}
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Visitors = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Avg. Duration</p>
               <p className="text-2xl font-semibold text-gray-900">
-                {visitorStats?.avgVisitDuration || '0m 0s'}
+                {visitorStats?.avgDuration || '0m 0s'}
               </p>
             </div>
           </div>

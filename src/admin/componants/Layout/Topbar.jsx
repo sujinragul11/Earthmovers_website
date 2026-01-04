@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaBell, FaSearch, FaUserCircle } from 'react-icons/fa';
 import { useAuth } from '../../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Topbar = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
   const [notifications] = useState([
     { id: 1, title: 'New contact form submission', time: '5 min ago', read: false },
     { id: 2, title: 'Website traffic spike', time: '1 hour ago', read: true },
@@ -11,6 +15,22 @@ const Topbar = () => {
   ]);
 
   const unreadCount = notifications.filter(n => !n.read).length;
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/admin/login');
+  };
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
@@ -43,8 +63,11 @@ const Topbar = () => {
             </div>
 
             {/* User dropdown */}
-            <div className="relative">
-              <button className="flex items-center space-x-2 focus:outline-none">
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="flex items-center space-x-2 focus:outline-none"
+              >
                 <img
                   src={user?.avatar || 'https://ui-avatars.com/api/?name=Admin&background=1E40AF&color=fff'}
                   alt={user?.name}
@@ -54,6 +77,17 @@ const Topbar = () => {
                   {user?.name}
                 </span>
               </button>
+              
+              {showDropdown && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200">
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

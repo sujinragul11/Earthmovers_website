@@ -1,8 +1,9 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './contexts/AuthContext';
 import LoadingSpinner from './componants/ui/LoadingSpinner';
+import { trackVisitor } from './utils/visitorTracking';
 
 // Public pages (lazy loaded)
 const Home = lazy(() => import('./pages/Home'));
@@ -19,8 +20,16 @@ const AdminDashboard = lazy(() => import('./admin/pages/Dashboard'));
 const AdminContacts = lazy(() => import('./admin/pages/Contacts'));
 const AdminVisitors = lazy(() => import('./admin/pages/Visitors'));
 const AdminMessages = lazy(() => import('./admin/pages/Messages'));
+const AdminEquipment = lazy(() => import('./admin/pages/Equipment'));
+const AdminAnalytics = lazy(() => import('./admin/pages/Analytics'));
+const AdminSettings = lazy(() => import('./admin/pages/Settings'));
 
 function App() {
+  useEffect(() => {
+    // Track visitor on app load
+    trackVisitor();
+  }, []);
+
   return (
     <HelmetProvider>
       <AuthProvider>
@@ -42,6 +51,9 @@ function App() {
                 <Route path="contacts" element={<AdminContacts />} />
                 <Route path="visitors" element={<AdminVisitors />} />
                 <Route path="messages" element={<AdminMessages />} />
+                <Route path="equipment" element={<AdminEquipment />} />
+                <Route path="analytics" element={<AdminAnalytics />} />
+                <Route path="settings" element={<AdminSettings />} />
                 <Route path="*" element={<Navigate to="/admin" replace />} />
               </Route>
 

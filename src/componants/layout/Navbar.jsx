@@ -77,7 +77,7 @@ const Navbar = () => {
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary flex items-center space-x-2"
+                className="btn-secondary flex items-center space-x-2 bg-green-500 hover:bg-green-600"
               >
                 <FaWhatsapp />
                 <span>Get Quote</span>

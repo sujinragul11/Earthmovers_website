@@ -62,20 +62,20 @@ const Projects = () => {
       keywords: "construction projects, completed works, project gallery, infrastructure projects"
     }}>
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-gradient-to-br from-secondary/10 to-primary/10">
+      <section className="pt-24 pb-20 bg-[#C0C0C0]">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Projects</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">Our Projects</h1>
+          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
             Showcasing our successful earthmoving projects across various sectors and locations
           </p>
         </div>
       </section>
 
       {/* Project Filters */}
-      <section className="section-padding">
+      <section className="section-padding  bg-[#808080]">
         <div className="container-custom">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-center">Project Portfolio</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-black">Project Portfolio</h2>
             
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               {projectFilters.map((filter) => (
@@ -97,14 +97,14 @@ const Projects = () => {
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg">
                 <FaBuilding className="text-primary" />
-                <span className="font-semibold">{filteredProjects.length} Projects</span>
-                <span className="text-gray-500">completed successfully</span>
+                <span className="font-semibold text-black">{filteredProjects.length} Projects</span>
+                <span className="text-gray-900">completed successfully</span>
               </div>
             </div>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg -[#D3D3D3] p-6 rounded-2xl">
             {filteredProjects.map((project) => (
               <div 
                 key={project.id} 
@@ -189,24 +189,24 @@ const Projects = () => {
           )}
 
           {/* Project Statistics */}
-          <div className="mt-12 bg-gray-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6 text-center">Project Statistics</h2>
+          <div className="mt-12 bg-[#C0C0C0] rounded-2xl p-8 ">
+            <h2 className="text-2xl font-bold mb-6 text-center text-black">Project Statistics</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">8</div>
-                <div className="text-gray-600">Metro Projects</div>
+                <div className="text-gray-900">Metro Projects</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">12</div>
-                <div className="text-gray-600">Highway Projects</div>
+                <div className="text-gray-900">Highway Projects</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">6</div>
-                <div className="text-gray-600">Industrial Projects</div>
+                <div className="text-gray-900">Industrial Projects</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">4</div>
-                <div className="text-gray-600">Commercial Projects</div>
+                <div className="text-gray-900">Commercial Projects</div>
               </div>
             </div>
           </div>

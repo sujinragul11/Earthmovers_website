@@ -19,22 +19,22 @@ const Contact = () => {
       keywords: "contact earthmovers rental, equipment rental quote, project consultation, get in touch"
     }}>
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="pt-24 pb-20  bg-[#808080]">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">Get In Touch</h1>
+          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
             Contact us for equipment rental inquiries, quotes, and project consultations
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#C0C0C0]">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
+              <h2 className="text-2xl font-bold mb-8 text-black">Contact Information</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
@@ -46,10 +46,10 @@ const Contact = () => {
                     <a href={`tel:${COMPANY_INFO.phone}`} className="text-primary hover:text-primary-dark font-medium block">
                       {COMPANY_INFO.phone}
                     </a>
-                    <a href={`tel:+919876543211`} className="text-gray-600 hover:text-primary">
+                    <a href={`tel:+919876543211`} className="text-gray-800 hover:text-gray-900 ">
                       +91 98765 43211 (Alternate)
                     </a>
-                    <p className="text-sm text-gray-500 mt-2">Call us for immediate assistance</p>
+                    <p className="text-sm text-gray-800 mt-2">Call us for immediate assistance</p>
                   </div>
                 </div>
 
@@ -63,11 +63,11 @@ const Contact = () => {
                       href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-green-600 hover:text-green-700 font-medium"
+                      className="text-green-700 hover:text-green-800 font-medium"
                     >
                       Chat with us on WhatsApp
                     </a>
-                    <p className="text-sm text-gray-500 mt-2">Quick quotes and support</p>
+                    <p className="text-sm text-gray-800 mt-2">Quick quotes and support</p>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
                     <a href={`mailto:${COMPANY_INFO.email}`} className="text-accent hover:text-accent-dark font-medium">
                       {COMPANY_INFO.email}
                     </a>
-                    <p className="text-sm text-gray-500 mt-2">For detailed inquiries and documents</p>
+                    <p className="text-sm text-gray-800 mt-2">For detailed inquiries and documents</p>
                   </div>
                 </div>
 
@@ -90,8 +90,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Office Address</h3>
-                    <p className="text-gray-700">{COMPANY_INFO.address}</p>
-                    <p className="text-sm text-gray-500 mt-2">Visit us for detailed discussions</p>
+                    <p className="text-gray-900">{COMPANY_INFO.address}</p>
+                    <p className="text-sm text-gray-800 mt-2">Visit us for detailed discussions</p>
                   </div>
                 </div>
 
@@ -101,15 +101,15 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Working Hours</h3>
-                    <p className="text-gray-700 font-medium">{COMPANY_INFO.workingHours}</p>
-                    <p className="text-sm text-gray-500 mt-2">Emergency support available</p>
+                    <p className="text-gray-900 font-medium">{COMPANY_INFO.workingHours}</p>
+                    <p className="text-sm text-gray-800 mt-2">Emergency support available</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Contact CTA */}
-              <div className="mt-8 bg-primary/5 rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-4">Quick Contact</h3>
+              <div className="mt-8  bg-[#808080] rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-4 text-black">Quick Contact</h3>
                 <div className="space-y-3">
                   <a
                     href={`tel:${COMPANY_INFO.phone}`}
@@ -122,7 +122,7 @@ const Contact = () => {
                     href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary w-full text-center"
+                    className="btn-secondary w-full text-center bg-green-700 hover:bg-green-600"
                   >
                     <FaWhatsapp className="inline mr-2" />
                     WhatsApp Now
@@ -184,17 +184,17 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="bg-gray-100 py-12">
+      <section className=" bg-[#808080] py-12">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold mb-6 text-center">Find Us</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center text-black">Find Us</h2>
           <div className="bg-white rounded-xl overflow-hidden shadow-lg">
             <div className="h-96 relative">
               {/* Placeholder for Google Maps */}
-              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+              <div className="absolute inset-0  bg-[#C0C0C0] flex items-center justify-center">
                 <div className="text-center">
                   <FaMapMarkerAlt className="text-4xl text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Our Location</h3>
-                  <p className="text-gray-600">{COMPANY_INFO.address}</p>
+                  <h3 className="text-xl font-bold mb-2 text-black">Our Location</h3>
+                  <p className="text-gray-900">{COMPANY_INFO.address}</p>
                   <a
                     href="https://maps.google.com/?q=Industrial+Area+Sector+62+Noida"
                     target="_blank"
@@ -211,10 +211,10 @@ const Contact = () => {
       </section>
 
       {/* Emergency Contact */}
-      <section className="section-padding bg-primary text-white">
+      <section className="section-padding bg-[#C0C0C0] text-white">
         <div className="container-custom text-center">
-          <h2 className="text-2xl font-bold mb-4">Emergency Contact</h2>
-          <p className="text-lg mb-6 max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4 text-black">Emergency Contact</h2>
+          <p className="text-lg mb-6 max-w-2xl mx-auto text-gray-900">
             Need equipment urgently? Contact our emergency helpline for immediate assistance.
           </p>
           <a

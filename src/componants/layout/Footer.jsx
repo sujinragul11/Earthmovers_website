@@ -91,8 +91,8 @@ const Footer = () => {
                 <FaPhone className="text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Phone</p>
-                  <a href="tel:+919876543210" className="text-gray-400 hover:text-primary">
-                    +91 98765 43210
+                  <a href="tel:+919150503525" className="text-gray-400 hover:text-primary">
+                    +91 91505 03525
                   </a>
                 </div>
               </div>
@@ -100,8 +100,8 @@ const Footer = () => {
                 <FaEnvelope className="text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href="mailto:info@earthmoversrental.com" className="text-gray-400 hover:text-primary">
-                    info@earthmoversrental.com
+                  <a href="mailto:sivaearthmoverscbe@gmail.com" className="text-gray-400 hover:text-primary">
+                    sivaearthmoverscbe@gmail.com
                   </a>
                 </div>
               </div>
@@ -110,8 +110,8 @@ const Footer = () => {
                 <div>
                   <p className="font-semibold">Address</p>
                   <p className="text-gray-400">
-                    Industrial Area, Sector 62<br />
-                    Noida, Uttar Pradesh 201309
+                     2/435/2 Thiruvalluvar Nagar, Somaiyanur road, <br />
+                     coimbatore -641108
                   </p>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Footer = () => {
         {/* WhatsApp Button for Desktop */}
         <div className="hidden lg:block fixed bottom-6 right-6 z-40">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919150503525"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center space-x-2 animate-bounce"

@@ -1,5 +1,5 @@
 export const generateWhatsAppMessage = (formData) => {
-  const phone = "919876543210";
+  const phone = "+919150503525";
   const message = `
 *New Enquiry from Website*
 
@@ -16,7 +16,7 @@ _This message was sent from the EarthMovers Rental website_
 };
 
 export const generateQuickQuoteMessage = (equipment, hours) => {
-  const phone = "919876543210";
+  const phone = "+919150503525";
   const message = `
 *Quick Quote Request*
 

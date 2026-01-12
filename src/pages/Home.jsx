@@ -55,7 +55,7 @@ const Home = () => {
                 Get Free Quote
               </Link>
               <a
-                href="tel:+919876543210"
+                href="tel:+919150503525"
                 className="flex items-center space-x-2 bg-[#808080] hover:bg-gray-500 text-black font-semibold py-4 px-6 rounded-lg transition duration-300"
               >
                 <FaPhone /> <span>Call Now</span>
@@ -172,7 +172,7 @@ const Home = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <FaShieldAlt className="text-2xl text-accent flex-shrink-0 mt-1" />
+                  <FaShieldAlt className="text-2xl text-green-800 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Safety First</h3>
                     <p className="text-gray-800">
@@ -182,7 +182,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <FaRupeeSign className="text-2xl text-accent flex-shrink-0 mt-1" />
+                  <FaRupeeSign className="text-2xl text-green-800 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Transparent Pricing</h3>
                     <p className="text-gray-800">
@@ -192,7 +192,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <FaHeadset className="text-2xl text-accent flex-shrink-0 mt-1" />
+                  <FaHeadset className="text-2xl text-green-800 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
                     <p className="text-gray-800">
@@ -202,7 +202,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <FaTools className="text-2xl text-accent flex-shrink-0 mt-1" />
+                  <FaTools className="text-2xl text-green-800 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Quality Equipment</h3>
                     <p className="text-gray-800">
@@ -220,10 +220,10 @@ const Home = () => {
                 className="rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
-                <div className="text-3xl font-bold text-primary">15+</div>
+                <div className="text-3xl font-bold text-green-800">28+</div>
                 <div className="text-lg font-semibold">Years Experience</div>
                 <p className="text-gray-800 text-sm mt-2">
-                  Serving construction industry since 2008
+                  Serving construction industry since 1998
                 </p>
               </div>
             </div>
@@ -242,7 +242,7 @@ const Home = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4 ">
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919150503525"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-700 hover:bg-green-600 text-white text-lg px-8 py-4 flex items-center space-x-2 font-semibold rounded-lg transition duration-300"
@@ -252,11 +252,11 @@ const Home = () => {
               <span>WhatsApp Quote</span>
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+919150503525"
               className="flex items-center space-x-2 bg-primary hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition duration-300"
             >
               <FaPhone />
-              <span>Call Now: +91 98765 43210</span>
+              <span>Call Now: +91 91505 03525</span>
             </a>
           </div>
         </div>

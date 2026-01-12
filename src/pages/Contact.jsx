@@ -46,8 +46,8 @@ const Contact = () => {
                     <a href={`tel:${COMPANY_INFO.phone}`} className="text-primary hover:text-primary-dark font-medium block">
                       {COMPANY_INFO.phone}
                     </a>
-                    <a href={`tel:+919876543211`} className="text-gray-800 hover:text-gray-900 ">
-                      +91 98765 43211 (Alternate)
+                    <a href={`tel:+919150503525`} className="text-gray-800 hover:text-gray-900 ">
+                      +91  98597 95795 (Alternate)
                     </a>
                     <p className="text-sm text-gray-800 mt-2">Call us for immediate assistance</p>
                   </div>
@@ -90,7 +90,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Office Address</h3>
-                    <p className="text-gray-900">{COMPANY_INFO.address}</p>
+                    <p className="text-gray-900 font-semibold">{COMPANY_INFO.address}</p>
                     <p className="text-sm text-gray-800 mt-2">Visit us for detailed discussions</p>
                   </div>
                 </div>
@@ -196,7 +196,7 @@ const Contact = () => {
                   <h3 className="text-xl font-bold mb-2 text-black">Our Location</h3>
                   <p className="text-gray-900">{COMPANY_INFO.address}</p>
                   <a
-                    href="https://maps.google.com/?q=Industrial+Area+Sector+62+Noida"
+                    href="https://maps.app.goo.gl/npQ4mXhFbffEth629"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-4 btn-primary"
@@ -218,11 +218,11 @@ const Contact = () => {
             Need equipment urgently? Contact our emergency helpline for immediate assistance.
           </p>
           <a
-            href="tel:+919876543210"
+            href="tel:+919150503525"
             className="inline-flex items-center text-2xl font-bold bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition duration-300"
           >
             <FaPhone className="mr-3" />
-            Emergency: +91 98765 43210
+            Emergency: +91 91505 03525      
           </a>
         </div>
       </section>

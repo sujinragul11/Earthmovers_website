@@ -227,14 +227,14 @@ const Pricing = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+919150503525"
                 className="btn-secondary px-8 py-3 flex items-center space-x-2 bg-primary hover:bg-blue-700"
               >
                 <FaPhoneAlt />
                 <span>Call for Quote</span>
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919150503525"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-700 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition duration-300 flex items-center gap-2"

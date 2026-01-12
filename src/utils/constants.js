@@ -1,9 +1,9 @@
 export const COMPANY_INFO = {
   name: "EarthMovers Rental",
-  phone: "+91 98765 43210",
-  whatsapp: "+919876543210",
-  email: "info@earthmoversrental.com",
-  address: "Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+  phone: "+91 91505 03525",
+  whatsapp: "+919150503525",
+  email: "sivaearthmoverscbe@gmail.com",
+  address: "2/435/2 Thiruvalluvar Nagar, Somaiyanur road, coimbatore -641108",
   workingHours: "24/7, All Days",
   yearsExperience: 15
 };

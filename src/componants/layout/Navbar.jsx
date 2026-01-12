@@ -67,14 +67,14 @@ const Navbar = () => {
             {/* Call to Action */}
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+919150503525"
                 className="flex items-center space-x-2 text-primary hover:text-primary-dark font-semibold"
               >
                 <FaPhone />
-                <span>+91 98765 43210</span>
+                <span>+91 91505 03525</span>
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919150503525"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center space-x-2 bg-green-500 hover:bg-green-600"
@@ -118,14 +118,14 @@ const Navbar = () => {
                 ))}
                 <div className="pt-4 border-t">
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919150503525"
                     className="flex items-center space-x-2 text-primary font-semibold py-2"
                   >
                     <FaPhone />
-                    <span>+91 98765 43210</span>
+                    <span>+91 91505 03525</span>
                   </a>
                   <a
-                    href="https://wa.me/919876543210"
+                    href="https://wa.me/919150503525"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary w-full flex items-center justify-center space-x-2 mt-2"
@@ -143,7 +143,7 @@ const Navbar = () => {
       {/* Mobile Floating Buttons */}
       <div className="md:hidden fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
         <a
-          href="https://wa.me/919876543210"
+          href="https://wa.me/919150503525"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg"
@@ -151,7 +151,7 @@ const Navbar = () => {
           <FaWhatsapp className="text-2xl" />
         </a>
         <a
-          href="tel:+919876543210"
+          href="tel:+919150503525"
           className="bg-primary hover:bg-primary-dark text-white p-4 rounded-full shadow-lg"
         >
           <FaPhone className="text-2xl" />

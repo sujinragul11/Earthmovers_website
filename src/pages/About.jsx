@@ -49,7 +49,7 @@ const About = () => {
             About EarthMovers Rental
           </h1>
           <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-            With over 15 years of experience, we are your trusted partner for reliable earthmoving solutions across India.
+            With over 28 years of experience, we are your trusted partner for reliable earthmoving solutions across India.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ const About = () => {
 
               <div className="space-y-4 text-gray-900 font-bold">
                 <p>
-                  Founded in 2008, EarthMovers Rental began with a single excavator and a vision to provide reliable construction equipment rental services. What started as a small family business has grown into one of the region's most trusted earthmoving equipment providers.
+                  Founded in 1998, EarthMovers Rental began with a single excavator and a vision to provide reliable construction equipment rental services. What started as a small family business has grown into one of the region's most trusted earthmoving equipment providers.
                 </p>
                 <p>
                   Our journey has been marked by steady growth, driven by our commitment to quality equipment, skilled operators, and exceptional customer service. We've expanded our fleet from one machine to over 17 modern earthmovers, serving projects ranging from small residential constructions to major infrastructure developments.
@@ -75,7 +75,7 @@ const About = () => {
 
               <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">15+</div>
+                  <div className="text-3xl font-bold text-white">28+</div>
                   <div className="text-white">Years Experience</div>
                 </div>
                 <div className="text-center">

@@ -1,3 +1,16 @@
+import jcb3dx from '../assets/Jcb 3dx super.jpg';
+import jcb220 from '../assets/JCB 220 LC Xtra.jpg';
+import cat320 from '../assets/Caterpillar 320.jpg';
+import komatsu210 from '../assets/Komatsu PC210.jpg';
+import volvoL90 from '../assets/Volvo L90H.jpg';
+import cat950 from '../assets/Caterpillar 950M.jpg';
+import ashokLeyland from '../assets/Ashok Leyland 2516.jpg';
+import bharatBenz from '../assets/BharatBenz 2823.png';
+import motorGrader from '../assets/Motor Grader.jpg';
+import soilCompactor from '../assets/Soil Compactor volvo.jpg';
+import concreteMixer from '../assets/Concrete Mixer.jpg';
+import plan from '../assets/Plan.png';
+
 export const fleetData = [
   {
     id: 1,
@@ -12,7 +25,7 @@ export const fleetData = [
       "Operating Weight: 7500 kg"
     ],
     features: ["Breaker Attachment Available", "AC Cabin", "GPS Enabled", "Quick Coupler"],
-    image: "/images/equipment/jcb-3dx.jpg"
+    image: jcb3dx
   },
   {
     id: 2,
@@ -27,7 +40,7 @@ export const fleetData = [
       "Operating Weight: 22000 kg"
     ],
     features: ["Long Reach", "Rock Breaker", "Climate Control", "Advanced Hydraulics"],
-    image: "/images/equipment/jcb-220.jpg"
+    image: jcb220
   },
   {
     id: 3,
@@ -42,7 +55,7 @@ export const fleetData = [
       "Operating Weight: 21000 kg"
     ],
     features: ["Advanced Monitor", "Eco Mode", "Auto Greasing", "Heavy Duty"],
-    image: "/images/equipment/cat-320.jpg"
+    image: cat320
   },
   {
     id: 4,
@@ -57,7 +70,7 @@ export const fleetData = [
       "Operating Weight: 21500 kg"
     ],
     features: ["Fuel Efficient", "Low Maintenance", "Comfort Seat", "LED Lights"],
-    image: "/images/equipment/komatsu-210.jpg"
+    image: komatsu210
   },
   {
     id: 5,
@@ -72,7 +85,7 @@ export const fleetData = [
       "Operating Weight: 16000 kg"
     ],
     features: ["Quick Shift", "Ride Control", "High Lift", "Advanced Display"],
-    image: "/images/equipment/volvo-l90.jpg"
+    image: volvoL90
   },
   {
     id: 6,
@@ -87,7 +100,7 @@ export const fleetData = [
       "Operating Weight: 18500 kg"
     ],
     features: ["Power Shift", "Enhanced Vision", "Auto Lube", "Service Indicators"],
-    image: "/images/equipment/cat-950.jpg"
+    image: cat950
   },
   {
     id: 7,
@@ -102,7 +115,7 @@ export const fleetData = [
       "GVW: 25160 kg"
     ],
     features: ["Power Steering", "AC Cabin", "Dual Air Brakes", "Heavy Duty Chassis"],
-    image: "/images/equipment/ashok-tipper.jpg"
+    image: ashokLeyland
   },
   {
     id: 8,
@@ -117,7 +130,7 @@ export const fleetData = [
       "GVW: 28200 kg"
     ],
     features: ["Comfort Cabin", "Fuel Efficient", "High Torque", "Service Network"],
-    image: "/images/equipment/bharatbenz.jpg"
+    image: bharatBenz
   },
   {
     id: 9,
@@ -132,7 +145,7 @@ export const fleetData = [
       "Type: Truck Mounted"
     ],
     features: ["Power Telescoping", "Safe Load Indicator", "360 Rotation", "Outriggers"],
-    image: "/images/equipment/hydra-crane.jpg"
+    image: plan
   },
   {
     id: 10,
@@ -147,7 +160,7 @@ export const fleetData = [
       "Grade Ability: 30°"
     ],
     features: ["All Wheel Drive", "Automatic Controls", "Circle Side Shift", "Comfort Cabin"],
-    image: "/images/equipment/grader.jpg"
+    image: motorGrader
   },
   {
     id: 11,
@@ -162,7 +175,7 @@ export const fleetData = [
       "Vibration Frequency: 2800 vpm"
     ],
     features: ["Double Drum", "Amplitude Control", "Water Sprinkler", "Excellent Visibility"],
-    image: "/images/equipment/compactor.jpg"
+    image: soilCompactor
   },
   {
     id: 12,
@@ -177,7 +190,7 @@ export const fleetData = [
       "Discharge Time: 8 min"
     ],
     features: ["Hydraulic Operation", "Water Tank", "Durable Drum", "Easy Maintenance"],
-    image: "/images/equipment/concrete-mixer.jpg"
+    image: concreteMixer
   }
 ];
 

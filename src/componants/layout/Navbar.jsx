@@ -38,11 +38,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <NavLink to="/" className="flex items-center space-x-2">
-              <MdBuild className="text-3xl text-secondary" />
-              <div>
-                <h1 className="text-xl font-heading font-bold text-gray-900">EarthMovers<span className="text-primary">Rental</span></h1>
-                <p className="text-xs text-gray-600">Heavy Equipment Solutions</p>
-              </div>
+              <img src="/src/assets/logo.png" alt="EarthMovers Rental Logo" className="h-12 w-12 object-contain" />
             </NavLink>
 
             {/* Desktop Navigation */}

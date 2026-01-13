@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../componants/layout/Layout';
 import EquipmentCard from '../componants/shared/EquipmentCard';
+import AnimatedCountUp from '../componants/ui/CountUp';
 import { fleetData, categories } from '../data/fleetData';
 import { FaFilter, FaTruck, FaHardHat, FaCheckCircle } from 'react-icons/fa';
 import { MdBuild, MdSettings } from 'react-icons/md';
@@ -73,7 +74,7 @@ const Fleet = () => {
               <div className="text-sm font-semibold">Total Units Available</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">30+</div>
+              <div className="text-3xl font-bold"><AnimatedCountUp end={30} /></div>
               <div className="text-sm font-semibold">Skilled Operators</div>
             </div>
             <div className="text-center">

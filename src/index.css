@@ -51,4 +51,21 @@
   .label {
     @apply block text-sm font-medium text-gray-700 mb-1;
   }
+
+  .animated-text {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px) rotate(10deg);
+    transition: all 0.6s ease-out;
+  }
+
+  .letter.animate {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
 }

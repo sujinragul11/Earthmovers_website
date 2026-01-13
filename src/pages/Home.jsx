@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../componants/layout/Layout';
 import EquipmentCard from '../componants/shared/EquipmentCard';
+import AnimatedCountUp from '../componants/ui/CountUp';
+import AnimatedText from '../componants/ui/AnimatedText';
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaRupeeSign, FaHeadset, FaTools, FaUser } from 'react-icons/fa';
 import { MdBuild, MdLocationCity } from 'react-icons/md';
 import { fleetData } from '../data/fleetData';
@@ -96,19 +98,19 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <MdBuild className="text-5xl mx-auto mb-4 text-gray-800" />
-              <div className="text-4xl font-bold mb-2">17+</div>
+              <div className="text-4xl font-bold mb-2"><AnimatedCountUp end={17} /></div>
               <p className="text-lg">Modern Machines</p>
             </div>
 
             <div>
               <FaUser className="text-5xl mx-auto mb-4 text-gray-800" />
-              <div className="text-4xl font-bold mb-2">30+</div>
+              <div className="text-4xl font-bold mb-2"><AnimatedCountUp end={30} /></div>
               <p className="text-lg">Skilled Operators</p>
             </div>
 
             <div>
               <MdLocationCity className="text-5xl mx-auto mb-4 text-gray-800" />
-              <div className="text-4xl font-bold mb-2">150+</div>
+              <div className="text-4xl font-bold mb-2"><AnimatedCountUp end={150} /></div>
               <p className="text-lg">Projects Completed</p>
             </div>
 
@@ -220,7 +222,7 @@ const Home = () => {
                 className="rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
-                <div className="text-3xl font-bold text-green-800">28+</div>
+                <div className="text-3xl font-bold text-green-800"><AnimatedCountUp end={28} /></div>
                 <div className="text-lg font-semibold">Years Experience</div>
                 <p className="text-gray-800 text-sm mt-2">
                   Serving construction industry since 1998

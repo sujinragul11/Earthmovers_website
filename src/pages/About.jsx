@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../componants/layout/Layout';
+import AnimatedCountUp from '../componants/ui/CountUp';
 import { FaAward, FaUsers, FaShieldAlt, FaHandshake, FaEye, FaStar, FaUserCheck, FaMedal } from 'react-icons/fa';
 import { GiDuration, GiTargetPrize } from 'react-icons/gi';
 
@@ -75,19 +76,19 @@ const About = () => {
 
               <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">28+</div>
+                  <div className="text-3xl font-bold text-white"><AnimatedCountUp end={28} /></div>
                   <div className="text-white">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">17+</div>
+                  <div className="text-3xl font-bold text-white"><AnimatedCountUp end={17} /></div>
                   <div className="text-white">Modern Machines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">30+</div>
+                  <div className="text-3xl font-bold text-white"><AnimatedCountUp end={30} /></div>
                   <div className="text-white">Skilled Operators</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">150+</div>
+                  <div className="text-3xl font-bold text-white"><AnimatedCountUp end={150} /></div>
                   <div className="text-white">Projects Completed</div>
                 </div>
               </div>
@@ -127,7 +128,7 @@ const About = () => {
               <div className="flex items-center mb-6">
                 <FaUsers className="text-4xl text-primary mr-4" />
                 <div>
-                  <h3 className="text-xl font-bold text-black">30+ Skilled Operators</h3>
+                  <h3 className="text-xl font-bold text-black"><AnimatedCountUp end={30} /> Skilled Operators</h3>
                   <p className="text-gray-600">Certified and experienced professionals</p>
                 </div>
               </div>

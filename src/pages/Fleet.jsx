@@ -48,12 +48,12 @@ const Fleet = () => {
       keywords: "equipment fleet, excavator rental, construction machinery, heavy equipment"
     }}>
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-[#C0C0C0]">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-[#C0C0C0] px-4 md:px-0">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-black">
             Our Equipment Fleet
           </h1>
-          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-800 max-w-3xl mx-auto px-2">
             Modern, well-maintained earthmoving equipment ready for your construction projects
           </p>
         </div>
@@ -61,50 +61,49 @@ const Fleet = () => {
 
 
       {/* Stats Banner */}
-      <div className="bg-[#808080] text-white py-6">
-
+      <div className="bg-[#808080] text-white py-6 md:py-8 px-4 md:px-0">
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold">{fleetData.length}</div>
-              <div className="text-sm font-semibold">Equipment Types</div>
+              <div className="text-2xl sm:text-3xl font-bold">{fleetData.length}</div>
+              <div className="text-xs sm:text-sm font-semibold">Equipment Types</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold ">{totalUnits}</div>
-              <div className="text-sm font-semibold">Total Units Available</div>
+              <div className="text-2xl sm:text-3xl font-bold">{totalUnits}</div>
+              <div className="text-xs sm:text-sm font-semibold">Total Units</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold"><AnimatedCountUp end={30} /></div>
-              <div className="text-sm font-semibold">Skilled Operators</div>
+              <div className="text-2xl sm:text-3xl font-bold"><AnimatedCountUp end={30} /></div>
+              <div className="text-xs sm:text-sm font-semibold">Skilled Operators</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">24/7</div>
-              <div className="text-sm font-semibold">Support Available</div>
+              <div className="text-2xl sm:text-3xl font-bold">24/7</div>
+              <div className="text-xs sm:text-sm font-semibold">Support</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Equipment Filter */}
-      <section className="section-padding bg-[#C0C0C0]" >
+      <section className="section-padding bg-[#C0C0C0] px-4 md:px-0" >
         <div className="container-custom">
           <div className="mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold flex items-center text-black">
-                <FaFilter className="mr-3 text-white" />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
+              <h2 className="text-xl sm:text-2xl font-bold flex items-center text-black">
+                <FaFilter className="mr-3 text-white hidden sm:block" />
                 Filter by Category
               </h2>
-              <div className="text-lg font-semibold text-black">
-                Total: {totalUnits} Machines Available
+              <div className="text-base sm:text-lg font-semibold text-black">
+                Total: {totalUnits} Machines
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${selectedCategory === category.id
+                  className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 whitespace-nowrap ${selectedCategory === category.id
                       ? 'bg-primary text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
@@ -130,7 +129,7 @@ const Fleet = () => {
                 <p className="text-gray-600">We're updating our inventory. Please check back soon.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {filteredEquipment.map((equipment) => (
                   <EquipmentCard key={equipment.id} equipment={equipment} />
                 ))}
@@ -139,27 +138,27 @@ const Fleet = () => {
           </div>
 
           {/* Features Section */}
-          <div className="rounded-2xl p-8 bg-[#808080]" >
-            <h2 className="text-2xl font-bold mb-6 text-center text-black">Why Choose Our Equipment</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl mb-4 ">🔧</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Well-Maintained</h3>
-                <p className="text-black">
+          <div className="rounded-2xl p-6 sm:p-8 bg-[#808080]" >
+            <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center text-black">Why Choose Our Equipment</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl mb-4 ">🔧</div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-black">Well-Maintained</h3>
+                <p className="text-sm sm:text-base text-black">
                   Regular servicing and maintenance ensure optimal performance and reliability.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">📱</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Modern Technology</h3>
-                <p className="text-black">
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl mb-4">📱</div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-black">Modern Technology</h3>
+                <p className="text-sm sm:text-base text-black">
                   Latest models with advanced features for improved efficiency and safety.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">🛡️</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Safety Certified</h3>
-                <p className="text-black">
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl mb-4">🛡️</div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-black">Safety Certified</h3>
+                <p className="text-sm sm:text-base text-black">
                   All equipment meets safety standards and undergoes regular inspections.
                 </p>
               </div>
@@ -167,11 +166,11 @@ const Fleet = () => {
           </div>
 
           {/* Additional Services */}
-          <div className="mt-12 bg-white rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6 text-center text-black">Additional Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="card p-6 bg-[#C0C0C0]">
-                <div className="flex items-start space-x-4">
+          <div className="mt-8 sm:mt-12 bg-white rounded-2xl p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center text-black">Additional Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="card p-4 sm:p-6 bg-[#C0C0C0]">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <FaHardHat className="text-2xl text-primary mt-1" />
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-black">Operator Services</h3>

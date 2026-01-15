@@ -15,8 +15,5 @@
     "SMTP_PASS": "@smtp_pass",
     "NODE_ENV": "production"
   },
-  "regions": ["iad1"],
-  "buildTargets": {
-    "server": "server.js"
-  }
+  "regions": ["iad1"]
 }

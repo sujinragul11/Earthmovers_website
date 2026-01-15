@@ -19,13 +19,6 @@ export const SERVICES = [
   "Transport Services"
 ];
 
-export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/earthmoversrental",
-  twitter: "https://twitter.com/earthmoversrental",
-  linkedin: "https://linkedin.com/company/earthmoversrental",
-  instagram: "https://instagram.com/earthmoversrental"
-};
-
 export const WHY_CHOOSE_US = [
   {
     title: "Modern Fleet",

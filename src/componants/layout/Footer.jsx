@@ -42,12 +42,8 @@ const Footer = () => {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 <FaFacebook className="text-xl" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                <FaTwitter className="text-xl" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                <FaLinkedin className="text-xl" />
-              </a>
+              
+             
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 <FaInstagram className="text-xl" />
               </a>
